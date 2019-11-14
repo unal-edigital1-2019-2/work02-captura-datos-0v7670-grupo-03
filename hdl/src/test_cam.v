@@ -21,6 +21,11 @@
 module test_cam(
     input wire clk,           // board clock: 32 MHz 
     input wire rst,         	// reset button
+	 input Href,
+	 input Vsync,
+	 input Pclk,
+	 input [7:0]Datos,
+	 output LOCKED, 
 
 	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
@@ -52,7 +57,6 @@ localparam BLUE_VGA =  8'b00000011;
 
 
 // Clk 
-wire clk32M;
 wire clk25M;
 wire clk24M;
 
@@ -62,7 +66,8 @@ wire  [AW-1: 0] DP_RAM_addr_in;
 wire  [DW-1: 0] DP_RAM_data_in;
 wire DP_RAM_regW;
 
-reg  [AW-1: 0] DP_RAM_addr_out;  
+reg  [AW-1: 0] DP_RAM_addr_out; 
+
 	
 // Conexión VGA Driver
 wire [DW-1:0]data_mem;	   // Salida de dp_ram al driver VGA
@@ -98,21 +103,30 @@ assign CAM_reset=  0;
   el bloque genera un reloj de 25Mhz usado para el VGA  y un relo de 24 MHz
   utilizado para la camara , a partir de una frecuencia de 32 Mhz
 **************************************************************************** */
-//assign clk32M =clk;
-clk_32MHZ_to_25M_24M
-  clk25_24(
-  .CLK_IN1(clk),
-  .CLK_OUT1(clk25M),
-  .CLK_OUT2(clk24M),
-  .RESET(rst)
- );
 
+cl_25_24 
+	clocks (
+	clk,
+	clk_25,
+	clk_24,
+	rst,
+	LOCKED);
 
 /* ****************************************************************************
 buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
 Se debe configurar AW  según los calculos realizados en el Wp01
 se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 332
 **************************************************************************** */
+CDD captura(
+	Href,
+	Vsync,
+	Pclk,
+	Datos,
+	DP_RAM_addr_in,
+	DP_RAM_data_in,
+	DP_RAM_regW);
+
+
 buffer_ram_dp #( AW,DW)
 	DP_RAM(  
 	.clk_w(clk), 
