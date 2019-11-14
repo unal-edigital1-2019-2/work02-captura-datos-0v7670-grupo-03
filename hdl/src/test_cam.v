@@ -21,11 +21,10 @@
 module test_cam(
     input wire clk,           // board clock: 32 MHz 
     input wire rst,         	// reset button
-	 input Href,
-	 input Vsync,
-	 input Pclk,
-	 input [7:0]Datos,
-	 output LOCKED, 
+	 input wire Href,
+	 input wire Vsync,
+	 input wire Pclk,
+	 input wire [7:0]Datos, 
 
 	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
@@ -107,10 +106,9 @@ assign CAM_reset=  0;
 cl_25_24 
 	clocks (
 	clk,
-	clk_25,
-	clk_24,
-	rst,
-	LOCKED);
+	clk25M,
+	clk24M,
+	rst);
 
 /* ****************************************************************************
 buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
