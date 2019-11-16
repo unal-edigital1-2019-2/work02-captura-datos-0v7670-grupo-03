@@ -1,0 +1,5 @@
+verilog work "src/VGA_driver.v"
+verilog work "src/cl_25_24.v"
+verilog work "src/CDD.v"
+verilog work "src/buffer_ram_dp.v"
+verilog work "src/test_cam.v"

@@ -1,0 +1,22 @@
+
+
+
+// Instantiate the module
+test_cam instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .Href(Href), 
+    .Vsync(Vsync), 
+    .Pclk(Pclk), 
+    .Datos(Datos), 
+    .VGA_Hsync_n(VGA_Hsync_n), 
+    .VGA_Vsync_n(VGA_Vsync_n), 
+    .VGA_R(VGA_R), 
+    .VGA_G(VGA_G), 
+    .VGA_B(VGA_B), 
+    .CAM_xclk(CAM_xclk), 
+    .CAM_pwdn(CAM_pwdn), 
+    .CAM_reset(CAM_reset)
+    );
+
+
