@@ -44,8 +44,8 @@ Para pasarlo a formato RGB332 se toman los datos más significativos de cada col
 
 Byte 1  |  Byte 2
 ----------------|---------------
-R R R R R G G G | G G G B B B B B
-0 1 2 x x 5 6 7 | x x x 3 4 x x x
+R |R |R |R |R |G |G |G | G| G| G| B| B| B| B| B
+0| 1| 2| X| X| 5| 6| 7 | X| X| X| 3| 4| X| X| X
 
 
 Cada vez que se muestree uno de los Bytes se debe sumar +1 a *count*, ya que este es quien determina que se debe hacer el siguiente muestreo. *count* puede ser 0 o 1. 
@@ -53,7 +53,7 @@ Cada vez que se muestree uno de los Bytes se debe sumar +1 a *count*, ya que est
 
 ![DOWNSAMPLING](./figs/Sampling.png)
 
-##Diagrama de flujo
+## Diagrama de flujo
 
 ![DIAGRAMA](./figs/DiagramadeFlujo.png)
 
