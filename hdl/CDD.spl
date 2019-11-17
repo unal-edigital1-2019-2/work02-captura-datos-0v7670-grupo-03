@@ -1,0 +1,13 @@
+[Inputs]
+Href
+Vsync
+Pclk
+=Datos[7:0]=
+[Outputs]
+Write
+=addr[14:0]=
+=datos[7:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel CDD
+

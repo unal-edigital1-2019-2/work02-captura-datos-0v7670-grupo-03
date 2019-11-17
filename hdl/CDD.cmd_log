@@ -1,0 +1,2 @@
+vhdtdtfi -lib work /home/brayan/work02-captura-datos-0v7670-grupo-03/hdl/src/CDD.v -lang verilog -prj Camara_0.2 -o CDD.spl -module CDD -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 CDD.spl /home/brayan/work02-captura-datos-0v7670-grupo-03/hdl/CDD.sym 

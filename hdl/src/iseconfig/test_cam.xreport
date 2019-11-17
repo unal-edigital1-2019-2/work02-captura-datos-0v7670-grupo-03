@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-11-14T00:38:55</DateModified>
+  <DateModified>2019-11-16T07:47:27</DateModified>
   <ModuleName>test_cam</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/osaav/Documents/GitHub/work02-captura-datos-0v7670-grupo-03/hdl/src/iseconfig/test_cam.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/osaav/Documents/GitHub/work02-captura-datos-0v7670-grupo-03/hdl/src</ImplementationReportsDirectory>
+  <SavedFilePath>/home/brayan/work02-captura-datos-0v7670-grupo-03/hdl/src/iseconfig/test_cam.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/brayan/work02-captura-datos-0v7670-grupo-03/hdl/src/</ImplementationReportsDirectory>
   <DateInitialized>2019-11-14T00:38:54</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
